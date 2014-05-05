@@ -14,4 +14,10 @@ class Contact < ActiveRecord::Base
   def self.by_letter(letter)
     where("lastname LIKE ?", "#{letter}%").order(:lastname)
   end
+
+  def self.to_csv(contacts = Contact.all)
+    CSV.generate do |csv|
+      contacts.each { |contact| csv << [contact.name, contact.email] }
+    end
+  end
 end

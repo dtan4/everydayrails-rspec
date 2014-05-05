@@ -65,4 +65,14 @@ describe Contact do
       end
     end
   end
+
+  describe "convert to CSV" do
+    it "returns CSV" do
+      create(:contact,
+             firstname: "Aaron",
+             lastname: "Sumnar",
+             email: "aaron@sample.com")
+      expect(Contact.to_csv).to match /Aaron Sumnar,aaron@sample.com/
+    end
+  end
 end
