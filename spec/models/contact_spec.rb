@@ -22,9 +22,9 @@ describe Contact do
 
   it "is invalid with a duplicate email address" do
     create(:contact,
-                       firstname: "Joe", lastname: "Tester", email: "tester@example.com")
+           firstname: "Joe", lastname: "Tester", email: "tester@example.com")
     contact = build(:contact,
-                                firstname: "Jane", lastname: "Tester", email: "tester@example.com")
+                    firstname: "Jane", lastname: "Tester", email: "tester@example.com")
     expect(contact).to have(1).errors_on(:email)
   end
 
@@ -33,23 +33,24 @@ describe Contact do
     expect(contact.name).to eq "John Doe"
   end
 
+  it "has three phone numbers" do
+    expect(create(:contact).phones).to have(3).items
+  end
+
   describe "filter last name by letter" do
     before do
-      @smith = Contact.create(
-                             firstname: "John",
-                             lastname: "Smith",
-                             email: "jsmith@example.com"
-                            )
-      @jones = Contact.create(
-                             firstname: "Tim",
-                             lastname: "Jones",
-                             email: "tjones@example.com"
-                            )
-      @johnson = Contact.create(
-                               firstname: "John",
-                               lastname: "Johnson",
-                               email: "jjohnson@example.com"
-                              )
+      @smith = create(:contact,
+                      firstname: "John",
+                      lastname: "Smith",
+                      email: "jsmith@example.com")
+      @jones = create(:contact,
+                      firstname: "Tim",
+                      lastname: "Jones",
+                      email: "tjones@example.com")
+      @johnson = create(:contact,
+                        firstname: "John",
+                        lastname: "Johnson",
+                        email: "jjohnson@example.com")
     end
 
     context "matching letters" do
