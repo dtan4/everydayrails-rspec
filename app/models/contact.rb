@@ -12,7 +12,11 @@ class Contact < ActiveRecord::Base
   end
 
   def self.by_letter(letter)
-    where("lastname LIKE ?", "#{letter}%").order(:lastname)
+    if letter
+      where("lastname LIKE ?", "#{letter}%").order(:lastname)
+    else
+      all.order("lastname, firstname")
+    end
   end
 
   def self.to_csv(contacts = Contact.all)
