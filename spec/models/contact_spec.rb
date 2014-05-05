@@ -36,5 +36,50 @@ describe Contact do
     expect(contact).to have(1).errors_on(:email)
   end
 
-  it "returns a contact's full name as a string"
+  it "returns a contact's full name as a string" do
+    contact = Contact.new(
+                          firstname: "John",
+                          lastname: "Doe",
+                          email: "johndoe@example.com"
+                         )
+    expect(contact.name).to eq "John Doe"
+  end
+
+  it "returns a sorted array of results that match" do
+    smith = Contact.create(
+                           firstname: "John",
+                           lastname: "Smith",
+                           email: "jsmith@example.com"
+                          )
+    jones = Contact.create(
+                           firstname: "Tim",
+                           lastname: "Jones",
+                           email: "tjones@example.com"
+                          )
+    johnson = Contact.create(
+                             firstname: "John",
+                             lastname: "Johnson",
+                             email: "jjohnson@example.com"
+                            )
+    expect(Contact.by_letter("J")).to eq [johnson, jones]
+  end
+
+  it "returns a sorted array of results that match" do
+    smith = Contact.create(
+                           firstname: "John",
+                           lastname: "Smith",
+                           email: "jsmith@example.com"
+                          )
+    jones = Contact.create(
+                           firstname: "Tim",
+                           lastname: "Jones",
+                           email: "tjones@example.com"
+                          )
+    johnson = Contact.create(
+                             firstname: "John",
+                             lastname: "Johnson",
+                             email: "jjohnson@example.com"
+                            )
+    expect(Contact.by_letter("J")).not_to include smith
+  end
 end
