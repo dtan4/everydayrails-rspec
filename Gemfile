@@ -57,4 +57,6 @@ group :development do
   gem "database_cleaner"
   gem "launchy"
   gem "selenium-webdriver"
+  gem "guard-rspec"
+  gem "terminal-notifier-guard"
 end
