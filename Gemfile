@@ -60,4 +60,6 @@ group :development do
   gem "selenium-webdriver"
   gem "guard-rspec"
   gem "terminal-notifier-guard"
+  gem "spring"
+  gem "spring-commands-rspec"
 end
