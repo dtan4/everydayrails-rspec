@@ -17,7 +17,7 @@ feature "User managament" do
     end.to change(User, :count).by(1)
 
     expect(current_path).to eq users_path
-    # expect(page).to have_content "New user created"
+    expect(page).to have_content "New user created"
 
     within "h1" do
       expect(page).to have_content "Users"
