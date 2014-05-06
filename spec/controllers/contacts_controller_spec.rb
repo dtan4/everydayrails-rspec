@@ -271,7 +271,7 @@ describe ContactsController do
     describe "GET #new" do
       it "requires login" do
         get :new
-        expect(response).to redirect_to login_url
+        expect(response).to require_login
       end
     end
 
@@ -279,28 +279,28 @@ describe ContactsController do
       it "requires login" do
         contact = create(:contact)
         get :edit, id: contact
-        expect(response).to redirect_to login_url
+        expect(response).to require_login
       end
     end
 
     describe "POST #create" do
       it "requires login" do
         post :create, id: create(:contact), contact: attributes_for(:contact)
-        expect(response).to redirect_to login_url
+        expect(response).to require_login
       end
     end
 
     describe "PATCH #update" do
       it "requires login" do
         patch :update, id: create(:contact), contact: attributes_for(:contact)
-        expect(response).to redirect_to login_url
+        expect(response).to require_login
       end
     end
 
     describe "DELETE #destroy" do
       it "requires login" do
         delete :destroy, id: create(:contact)
-        expect(response).to redirect_to login_url
+        expect(response).to require_login
       end
     end
   end
