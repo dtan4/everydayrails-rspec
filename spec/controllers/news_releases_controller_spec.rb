@@ -11,7 +11,6 @@ describe NewsReleasesController do
   describe "POST #create" do
     it "requires login" do
       post :create, news_release: attributes_for(:news_release)
-      binding.pry
       expect(response).to require_login
     end
   end
