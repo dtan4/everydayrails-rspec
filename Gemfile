@@ -62,4 +62,5 @@ group :development do
   gem "terminal-notifier-guard"
   gem "spring"
   gem "spring-commands-rspec"
+  gem "pry-rails"
 end
