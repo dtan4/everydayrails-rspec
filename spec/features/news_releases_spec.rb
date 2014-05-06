@@ -2,7 +2,7 @@ require "spec_helper"
 
 feature "News releases" do
   context "as a user" do
-    scenario "adds a news release", js: true do
+    scenario "adds a news release" do
       user = create(:user)
       sign_in(user)
       visit root_path
@@ -24,6 +24,21 @@ feature "News releases" do
   end
 
   context "as a guest" do
-    scenario "reads a new release"
+    scenario "reads a new release" do
+      create(:news_release,
+             title: "Record profits for BigCo!",
+             released_on: "2013-08-01",
+             body: "Today, BigCo's CFO announced record growth.")
+
+      visit root_path
+      click_link "News"
+
+      expect(page).to_not have_content "Today, BigCo's CFO announced record growth.'"
+      expect(page).to_not have_content "Add News Release"
+
+      click_link "2013-08-01: Record profits for BigCo!"
+
+      expect(page).to have_content "Today, BigCo's CFO announced record growth."
+    end
   end
 end

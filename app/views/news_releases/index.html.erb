@@ -9,5 +9,7 @@
 </ul>
 
 <p>
-  <%= link_to 'Add News Release', new_news_release_path, class: 'btn btn-primary' %>
+  <% if current_user %>
+    <%= link_to 'Add News Release', new_news_release_path, class: 'btn btn-primary' %>
+  <% end %>
 </p>
