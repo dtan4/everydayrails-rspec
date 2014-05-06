@@ -38,30 +38,36 @@ describe Contact do
   end
 
   describe "filter last name by letter" do
-    before do
-      @smith = create(:contact,
-                      firstname: "John",
-                      lastname: "Smith",
-                      email: "jsmith@example.com")
-      @jones = create(:contact,
-                      firstname: "Tim",
-                      lastname: "Jones",
-                      email: "tjones@example.com")
-      @johnson = create(:contact,
-                        firstname: "John",
-                        lastname: "Johnson",
-                        email: "jjohnson@example.com")
+    let(:smith) do
+      create(:contact,
+             firstname: "John",
+             lastname: "Smith",
+             email: "jsmith@example.com")
+    end
+
+    let(:jones) do
+      create(:contact,
+             firstname: "Tim",
+             lastname: "Jones",
+             email: "tjones@example.com")
+    end
+
+    let(:johnson) do
+      create(:contact,
+             firstname: "John",
+             lastname: "Johnson",
+             email: "jjohnson@example.com")
     end
 
     context "matching letters" do
       it "returns a sorted array of results that match" do
-        expect(Contact.by_letter("J")).to eq [@johnson, @jones]
+        expect(Contact.by_letter("J")).to eq [johnson, jones]
       end
     end
 
     context "non-mathing letters" do
       it "returns a sorted array of results that match" do
-        expect(Contact.by_letter("J")).not_to include @smith
+        expect(Contact.by_letter("J")).not_to include smith
       end
     end
   end
