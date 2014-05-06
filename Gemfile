@@ -46,6 +46,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem "twitter-bootstrap-rails", git: "git://github.com/seyhunak/twitter-bootstrap-rails.git"
 
+group :test do
+  gem "shoulda-matchers", require: false
+end
+
 group :development, :test do
   gem "rspec-rails", "~> 2.14.0"
   gem "factory_girl_rails"
