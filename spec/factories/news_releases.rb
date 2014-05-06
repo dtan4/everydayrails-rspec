@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :news_release do
-    title "MyString"
-    released_on "2014-05-07"
-    body "MyText"
+    title "Test news release"
+    released_on 1.days.ago
+    body { Faker::Lorem.paragraph }
   end
 end
