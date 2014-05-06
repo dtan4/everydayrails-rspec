@@ -57,7 +57,7 @@ group :development do
   gem "capybara"
   gem "database_cleaner"
   gem "launchy"
-  gem "selenium-webdriver"
+  gem "poltergeist"
   gem "guard-rspec"
   gem "terminal-notifier-guard"
   gem "spring"
