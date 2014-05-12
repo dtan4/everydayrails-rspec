@@ -1,20 +1,6 @@
 require 'spec_helper'
 
 describe NewsReleasesController do
-  describe "GET #new" do
-    it "requires login" do
-      get :new
-      expect(response).to require_login
-    end
-  end
-
-  describe "POST #create" do
-    it "requires login" do
-      post :create, news_release: attributes_for(:news_release)
-      expect(response).to require_login
-    end
-  end
-
   shared_examples "full access to news_releases" do
     describe "PATCH #update" do
       let(:news_release) do
@@ -26,8 +12,8 @@ describe NewsReleasesController do
       context "with valid attributes" do
         it "updates the contact" do
           patch :update, id: news_release, news_release: attributes_for(:news_release,
-                                                                         title: "title news",
-                                                                         body: "hogefuga")
+                                                                        title: "title news",
+                                                                        body: "hogefuga")
           news_release.reload
           expect(news_release.title).to eq "title news"
           expect(news_release.body).to eq "hogefuga"
@@ -61,5 +47,21 @@ describe NewsReleasesController do
     end
 
     it_behaves_like "full access to news_releases"
+  end
+
+  describe "guest access" do
+    describe "GET #new" do
+      it "requires login" do
+        get :new
+        expect(response).to require_login
+      end
+    end
+
+    describe "POST #create" do
+      it "requires login" do
+        post :create, news_release: attributes_for(:news_release)
+        expect(response).to require_login
+      end
+    end
   end
 end
