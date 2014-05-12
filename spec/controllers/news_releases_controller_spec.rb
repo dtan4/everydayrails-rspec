@@ -39,6 +39,23 @@ describe NewsReleasesController do
         end
       end
     end
+
+    describe "DELETE #destroy" do
+      let!(:news_release) do
+        create(:news_release)
+      end
+
+      it "deletes the news_release from the database" do
+        expect do
+          delete :destroy, id: news_release
+        end.to change(NewsRelease, :count).by(-1)
+      end
+
+      it "redirects to news_releases#index" do
+        delete :destroy, id: news_release
+        expect(response).to redirect_to news_releases_url
+      end
+    end
   end
 
   describe "user access" do
