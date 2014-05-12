@@ -2,6 +2,34 @@ require 'spec_helper'
 
 describe NewsReleasesController do
   shared_examples "full access to news_releases" do
+    describe "POST #create" do
+      context "with valid attributes" do
+        it "creates the news_release" do
+          expect do
+            post :create, news_release: attributes_for(:news_release)
+          end.to change(NewsRelease, :count).by(1)
+        end
+
+        it "redirects to news_release#show" do
+          post :create, news_release: attributes_for(:news_release)
+          expect(response).to redirect_to news_release_path(assigns[:news_release])
+        end
+      end
+
+      context "with invalid attributes" do
+        it "does not create the news_release" do
+          expect do
+            post :create, news_release: attributes_for(:invalid_news_release)
+          end.not_to change(NewsRelease, :count).by(1)
+        end
+
+        it "re-renders the :new template" do
+          post :create, news_release: attributes_for(:invalid_news_release)
+          expect(response).to render_template :new
+        end
+      end
+    end
+
     describe "PATCH #update" do
       let(:news_release) do
         create(:news_release,
