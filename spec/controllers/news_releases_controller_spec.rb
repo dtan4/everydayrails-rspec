@@ -63,5 +63,23 @@ describe NewsReleasesController do
         expect(response).to require_login
       end
     end
+
+    describe "PATCH #update" do
+      it "requires login" do
+        news_release = create(:news_release)
+        patch :update, id: news_release, news_release: attributes_for(:news_release,
+                                                                      title: "title",
+                                                                      body: "body")
+        expect(response).to require_login
+      end
+    end
+
+    describe "DELETE #destroy" do
+      it "requires login" do
+        news_release = create(:news_release)
+        delete :destroy, id: news_release
+        expect(response).to require_login
+      end
+    end
   end
 end
