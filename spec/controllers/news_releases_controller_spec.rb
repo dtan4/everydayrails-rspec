@@ -12,7 +12,7 @@ describe NewsReleasesController do
 
         it "redirects to news_release#show" do
           post :create, news_release: attributes_for(:news_release)
-          expect(response).to redirect_to news_release_path(assigns[:news_release])
+          expect(response).to redirect_to news_releases_url
         end
       end
 
