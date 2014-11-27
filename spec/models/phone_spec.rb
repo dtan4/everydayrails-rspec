@@ -9,7 +9,8 @@ describe Phone, type: :model do
     mobile_phone = build(:mobile_phone,
                           contact: contact,
                           phone: "123-456-789")
-    expect(mobile_phone).to have(1).errors_on(:phone)
+    mobile_phone.valid?
+    expect(mobile_phone.errors[:phone].length).to eq 1
   end
 
   it "allows two contacts to share a phone number" do
