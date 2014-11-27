@@ -34,7 +34,7 @@ describe Contact, type: :model do
   end
 
   it "has three phone numbers" do
-    expect(create(:contact).phones).to have(3).items
+    expect(create(:contact).phones.size).to eq(3)
   end
 
   describe "filter last name by letter" do
