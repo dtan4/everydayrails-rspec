@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Contact do
+describe Contact, type: :model do
   it "is valid with a firstname, lastname and email" do
     expect(build(:contact)).to be_valid
   end

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Phone do
+describe Phone, type: :model do
   it "does not allow duplicate phone numbers per contact" do
     contact = create(:contact)
     create(:home_phone,

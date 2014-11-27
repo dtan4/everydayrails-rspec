@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe NewsReleasesController do
+describe NewsReleasesController, type: :controller do
   shared_examples "full access to news_releases" do
     describe "POST #create" do
       context "with valid attributes" do
