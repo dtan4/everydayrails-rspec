@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe ContactsController do
+describe ContactsController, type: :controller do
   shared_examples "public access to contacts" do
     describe "GET #index" do
       context "with params[:letter]" do

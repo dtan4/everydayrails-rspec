@@ -1,31 +1,34 @@
 require "spec_helper"
 
-describe Contact do
+describe Contact, type: :model do
   it "is valid with a firstname, lastname and email" do
     expect(build(:contact)).to be_valid
   end
 
   it "is invalid without a firstname" do
     contact = build(:contact, firstname: nil)
-    expect(contact).to have(1).errors_on(:firstname)
+    contact.valid?
+    expect(contact.errors[:firstname].length).to eq 1
   end
 
   it "is invalid withour a lastname" do
     contact = build(:contact, lastname: nil)
-    expect(contact).to have(1).errors_on(:lastname)
+    contact.valid?
+    expect(contact.errors[:lastname].length).to eq 1
   end
 
   it "is invalid without an email address" do
     contact = build(:contact, email: nil)
-    expect(contact).to have(1).errors_on(:email)
+    contact.valid?
+    expect(contact.errors[:email].length).to eq 1
   end
 
   it "is invalid with a duplicate email address" do
     create(:contact,
            firstname: "Joe", lastname: "Tester", email: "tester@example.com")
-    contact = build(:contact,
-                    firstname: "Jane", lastname: "Tester", email: "tester@example.com")
-    expect(contact).to have(1).errors_on(:email)
+    contact = build(:contact, firstname: "Jane", lastname: "Tester", email: "tester@example.com")
+    contact.valid?
+    expect(contact.errors[:email].length).to eq 1
   end
 
   it "returns a contact's full name as a string" do
@@ -34,7 +37,7 @@ describe Contact do
   end
 
   it "has three phone numbers" do
-    expect(create(:contact).phones).to have(3).items
+    expect(create(:contact).phones.size).to eq(3)
   end
 
   describe "filter last name by letter" do

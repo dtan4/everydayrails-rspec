@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe NewsReleasesController do
+describe NewsReleasesController, type: :controller do
   shared_examples "full access to news_releases" do
     describe "POST #create" do
       context "with valid attributes" do
@@ -20,7 +20,7 @@ describe NewsReleasesController do
         it "does not create the news_release" do
           expect do
             post :create, news_release: attributes_for(:invalid_news_release)
-          end.not_to change(NewsRelease, :count).by(1)
+          end.not_to change(NewsRelease, :count)
         end
 
         it "re-renders the :new template" do
