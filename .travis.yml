@@ -1,5 +1,7 @@
 language: ruby
 rvm:
   - 2.2
-before_script: bundle exec rake db:migrate
-script: bundle exec rake
+before_script: 
+  - bundle exec rake db:create
+  - bundle exec rake db:schema:load
+script: bundle exec rake spec
