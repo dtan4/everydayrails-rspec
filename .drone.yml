@@ -7,6 +7,8 @@ compose:
 build:
   image: ruby:2.2.3
   commands:
+    - apt-get update
+    - apt-get install nodejs
     - bundle install -j4 --path=vendor/bundle
-    - bundle exec rake db:test:prepare
-    - bundle exec rspec
+    # - bundle exec rake db:test:prepare
+    # - bundle exec rspec
