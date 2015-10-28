@@ -12,7 +12,10 @@ build:
     - DATABASE_PORT=5432
   commands:
     - apt-get update
-    - apt-get install -y nodejs
+    - apt-get install build-essential chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev nodejs wget
+    - wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2
+    - tar xjf phantomjs-1.9.8-linux-x86_64.tar.bz2
+    - cp phantomjs-1.9.8-linux-x86_64/bin/phantomjs /usr/local/bin
     - bundle install -j4 --path=vendor/bundle
     - bundle exec rake db:test:prepare
     - bundle exec rspec
