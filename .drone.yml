@@ -11,25 +11,23 @@ build:
     - DATABASE_HOST=localhost
     - DATABASE_PORT=5432
   commands:
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
-    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
+    - "bash -c 'HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo'"
