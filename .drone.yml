@@ -1,0 +1,12 @@
+cache:
+  mount:
+    - vendor/bundle
+compose:
+  database:
+    image: postgres:9.4
+build:
+  image: ruby:2.2.3
+  commands:
+    - bundle install -j4 --path=vendor/bundle
+    - bundle exec rake db:test:prepare
+    - bundle exec rspec
