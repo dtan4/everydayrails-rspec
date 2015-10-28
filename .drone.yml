@@ -6,6 +6,10 @@ compose:
     image: postgres:9.4
 build:
   image: ruby:2.2.3
+  environment:
+    - DATABASE_USER=postgres
+    - DATABASE_HOST=localhost
+    - DATABASE_PORT=5432
   commands:
     - apt-get update
     - apt-get install -y nodejs

@@ -9,6 +9,11 @@ development:
 
 test:
   <<: *default
+  username: <%= ENV['DATABASE_USER'].presence || ENV['USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'].presence || 'localhost' %>
+  port: <%= ENV['DATABASE_PORT'].presence || 5432 %>
+  min_messages: WARNING
   database: everydayrails_test
 
 production:
