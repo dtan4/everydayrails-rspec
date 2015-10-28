@@ -11,11 +11,25 @@ build:
     - DATABASE_HOST=localhost
     - DATABASE_PORT=5432
   commands:
-    - apt-get update
-    - apt-get install -y build-essential chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev nodejs wget
-    - wget -qO phantomjs-1.9.8-linux-x86_64.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2
-    - tar xjf phantomjs-1.9.8-linux-x86_64.tar.bz2
-    - cp phantomjs-1.9.8-linux-x86_64/bin/phantomjs /usr/local/bin
-    - bundle install -j4 --path=vendor/bundle
-    - bundle exec rake db:test:prepare
-    - bundle exec rspec
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
+    - HOGE=1 FUGA=2 FOO=hogefugabaa HOGE1=1 FUGA2=2 FOO2=hogefugabaa echo piyo
