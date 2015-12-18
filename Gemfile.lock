@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: 0efbcb1b3e9dea3ddcdfb22c8478f7e7efd9a3bd
+  revision: c6893c3db02108bcdee7f8f333531b99806779ac
   specs:
     twitter-bootstrap-rails (3.2.2)
       actionpack (>= 3.1)
@@ -46,7 +46,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.8)
+    addressable (2.4.0)
     arel (6.0.3)
     bcrypt-ruby (3.0.1)
     builder (3.2.2)
@@ -141,7 +141,7 @@ GEM
     multi_json (1.11.2)
     nenv (0.2.0)
     netrc (0.11.0)
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     notiffany (0.0.8)
       nenv (~> 0.1)
@@ -232,7 +232,7 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slop (3.6.0)
-    spring (1.5.0)
+    spring (1.6.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
     sprockets (2.12.4)
