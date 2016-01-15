@@ -12,7 +12,7 @@ feature "About BigCo modal" do
     expect(page).to have_content "About BigCo"
     expect(page).to have_content "BigCo produces the finest widgets in all the land"
 
-    within "#modal" do
+    within "#about_us" do
       click_button "Close"
     end
 
