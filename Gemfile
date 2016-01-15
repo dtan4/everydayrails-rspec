@@ -44,7 +44,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "twitter-bootstrap-rails", git: "git://github.com/seyhunak/twitter-bootstrap-rails.git"
+gem "twitter-bootstrap-rails", "~> 3.2.2"
 
 group :test do
   gem "shoulda-matchers", require: false
