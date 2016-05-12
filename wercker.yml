@@ -14,7 +14,7 @@ build:
         name: Show env
         code: env
 
-test:
+rspec-units:
   steps:
     - script:
         name: Show env
@@ -28,4 +28,20 @@ test:
         code: bundle exec rake db:test:prepare
     - script:
         name: Run RSpec
-        code: bundle exec rspec
+        code: bundle exec rspec spec/{models,controllers}
+
+rspec-features:
+  steps:
+    - script:
+        name: Show env
+        code: env
+    - bundle-install
+    - script:
+        name: Set POSTGRES_USER
+        code: export POSTGRES_USER=postgres
+    - script:
+        name: Prepare database
+        code: bundle exec rake db:test:prepare
+    - script:
+        name: Run RSpec
+        code: bundle exec rspec spec/features
