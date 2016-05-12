@@ -1,6 +1,6 @@
 box: ruby:2.3.1
 services:
-  - postgres
+  - postgres:9.4
 
 build:
   steps:
