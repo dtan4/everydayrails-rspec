@@ -5,6 +5,10 @@ services:
 build:
   steps:
     - script:
+        name: Set environment variables
+        code: |
+          export PHANTOMJS_VERSION=2.2.1
+    - script:
         name: Install dependencies
         code: |
           apt-get update
