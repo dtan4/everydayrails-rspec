@@ -1,4 +1,7 @@
-box: quay.io/dtan4/rails-test-base:latest
+box:
+  id: quay.io/dtan4/rails-test-base
+  tag: latest
+  registry: quay.io
 services:
   - postgres:9.4
 
