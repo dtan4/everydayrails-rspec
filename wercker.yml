@@ -16,7 +16,8 @@ build:
     - script:
         name: Install PhantomJS
         code: |
-          wget -q https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
+          wget -qO /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
+          cd /tmp
           tar jxf phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
           mv phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
 
