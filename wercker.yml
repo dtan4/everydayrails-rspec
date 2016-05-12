@@ -10,10 +10,19 @@ build:
     - script:
         name: Set POSTGRES_USER
         code: export POSTGRES_USER=postgres
+    - script:
+        name: Show env
+        code: env
 
 test:
   steps:
+    - script:
+        name: Show env
+        code: env
     - bundle-install
+    - script:
+        name: Set POSTGRES_USER
+        code: export POSTGRES_USER=postgres
     - script:
         name: Prepare database
         code: bundle exec rake db:test:prepare
