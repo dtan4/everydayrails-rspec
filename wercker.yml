@@ -1,6 +1,7 @@
 box: ruby:2.3.1
 services:
   - postgres
+
 build:
   steps:
     - script:
@@ -16,15 +17,15 @@ build:
           tar jxf phantomjs-2.1.1-linux-x86_64.tar.bz2
           mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
     - bundle-install
-
-test:
-  steps:
     - script:
         name: Set POSTGRES_USER
         code: export POSTGRES_USER=postgres
     - script:
         name: Prepare database
         code: bundle exec rake db:test:prepare
+
+test:
+  steps:
     - script:
         name: Run RSpec
         code: bundle exec rspec
