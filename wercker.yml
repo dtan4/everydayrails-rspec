@@ -5,10 +5,6 @@ services:
 build:
   steps:
     - script:
-        name: Set environment variables
-        code: |
-          export PHANTOMJS_VERSION=2.2.1
-    - script:
         name: Install dependencies
         code: |
           apt-get update
@@ -16,6 +12,7 @@ build:
     - script:
         name: Install PhantomJS
         code: |
+          export PHANTOMJS_VERSION=2.2.1
           wget -qO /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
           cd /tmp
           tar jxf phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
