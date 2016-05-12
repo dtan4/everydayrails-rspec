@@ -1,24 +1,24 @@
-box:
-  id: quay.io/dtan4/rails-test-base
-  tag: latest
-  registry: quay.io
+box: ruby:2.3.1
 services:
   - postgres:9.4
 
 build:
   steps:
     - script:
-        name: Set POSTGRES_USER
-        code: export POSTGRES_USER=postgres
+        name: Install dependencies
+        code: |
+          apt-get update
+          apt-get install -y nodejs
     - script:
-        name: Show env
-        code: env
+        name: Install PhantomJS
+        code: |
+          wget -qO /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
+          cd /tmp
+          tar jxf phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
+          mv phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
 
 rspec-models:
   steps:
-    - script:
-        name: Show env
-        code: env
     - bundle-install
     - script:
         name: Set POSTGRES_USER
@@ -32,9 +32,6 @@ rspec-models:
 
 rspec-controllers:
   steps:
-    - script:
-        name: Show env
-        code: env
     - bundle-install
     - script:
         name: Set POSTGRES_USER
@@ -48,9 +45,6 @@ rspec-controllers:
 
 rspec-features:
   steps:
-    - script:
-        name: Show env
-        code: env
     - bundle-install
     - script:
         name: Set POSTGRES_USER
