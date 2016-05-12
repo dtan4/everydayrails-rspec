@@ -1,4 +1,4 @@
-box: ruby:2.3.1
+box: quay.io/dtan4/rails-test-base:latest
 services:
   - postgres:9.4
 
