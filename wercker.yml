@@ -1,25 +1,13 @@
-box: ruby:2.3.1
+box:
+  id: quay.io/dtan4/rails-test-base
+  tag: latest
+  registry: quay.io
 services:
   - postgres:9.4
 
 build:
   steps:
-    - script:
-        name: Set environment variables
-        code: |
-          export PHANTOMJS_VERSION=2.1.1
-    - script:
-        name: Install dependencies
-        code: |
-          apt-get update
-          apt-get install -y nodejs
-    - script:
-        name: Install PhantomJS
-        code: |
-          wget -qO /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
-          cd /tmp
-          tar jxf phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
-          mv phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+    - bundle-install
 
 rspec-models:
   steps:
