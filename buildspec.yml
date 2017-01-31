@@ -3,6 +3,9 @@ version: 0.1
 phases:
   install:
     commands:
+      - sudo apt-get update
+      - sudo apt-get -y install nodejs npm
+      - sudo update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
       - bundle install -j4
   build:
     commands:
