@@ -1,0 +1,12 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - bundle install -j4
+  build:
+    commands:
+      - bundle exec rspec
+  post_build:
+    commands:
+      - echo Build completed on `date`
