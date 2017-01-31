@@ -4,7 +4,6 @@ phases:
   install:
     commands:
       - bundle install -j4
-      - docker -v
   build:
     commands:
       - bundle exec rake spec
