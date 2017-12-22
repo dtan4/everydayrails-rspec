@@ -34,4 +34,4 @@ RUN bundle exec rake assets:precompile
 
 EXPOSE 3000
 
-CMD ["bin/rails", "s"]
+CMD ["bin/rails", "s", "-b", "0.0.0.0"]
