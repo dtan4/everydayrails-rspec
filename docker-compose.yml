@@ -9,7 +9,7 @@ services:
       - "0.0.0.0"
     environment:
       DATABASE_URL: "postgres://postgres:password@db:5432/everydayrails?sslmode=disable"
-      RAILS_ENV: development
+      RAILS_ENV: production
     ports:
       - 3000:3000
   db:
