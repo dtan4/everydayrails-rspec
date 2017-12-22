@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    build: .
+    command:
+      - "bin/rails"
+      - "s"
+      - "-b"
+      - "0.0.0.0"
+    environment:
+      DATABASE_URL: "postgres://postgres:password@db:5432/everydayrails?sslmode=disable"
+      RAILS_ENV: production
+    ports:
+      - 3000:3000
+  db:
+    image: postgres:9.6-alpine
+    environment:
+      POSTGRES_DB: "everydayrails"
+      POSTGRES_PASSWORD: "password"
