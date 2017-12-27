@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.10'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'coffee-rails', '~> 4.0.0'
