@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.10'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
-gem 'pg'
+gem 'pg', '~> 0.21.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem "twitter-bootstrap-rails", "~> 3.2.2"
@@ -27,7 +27,7 @@ end
 group :development, :test do
   gem "coveralls"
   gem "factory_girl_rails"
-  gem "rspec-rails", "~> 3.1.0"
+  gem "rspec-rails", "~> 3.7.2"
 end
 
 group :development do
