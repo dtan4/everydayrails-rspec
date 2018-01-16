@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 2.3.3
+addons:
+  chrome: stable
 cache: bundler
 before_script:
   - bundle exec rake db:create
