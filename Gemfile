@@ -33,6 +33,7 @@ end
 
 group :development do
   gem "capybara"
+  gem "chromedriver-helper"
   gem "database_cleaner"
   gem "faker"
   gem "guard-rspec"
