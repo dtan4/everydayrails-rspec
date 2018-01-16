@@ -10,6 +10,9 @@ services:
     environment:
       DATABASE_URL: "postgres://postgres:password@db:5432/everydayrails?sslmode=disable"
       RAILS_ENV: production
+      ZIPKIN_ENABLED: 1
+      ZIPKIN_SERVICE_PORT: 3000
+      ZIPKIN_URL: "http://zipkin:9411"
     ports:
       - 3000:3000
   db:
@@ -17,3 +20,7 @@ services:
     environment:
       POSTGRES_DB: "everydayrails"
       POSTGRES_PASSWORD: "password"
+  zipkin:
+    image: openzipkin/zipkin:2.4.2
+    ports:
+      - 9411:9411

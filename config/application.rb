@@ -19,5 +19,13 @@ module ContactsExample40
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+
+    if ENV["ZIPKIN_ENABLED"].present?
+      config.middleware.use ZipkinTracer::RackHandler,
+        service_name: "everydayrails-rspec",
+        service_port: (ENV["ZIPKIN_SERVICE_PORT"] || 3000).to_i,
+        json_api_host: ENV["ZIPKIN_URL"] || "http://localhost:9411",
+        sample_rate: 1
+    end
   end
 end
