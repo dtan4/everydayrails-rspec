@@ -27,7 +27,7 @@ end
 
 group :development, :test do
   gem "coveralls"
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "rspec-rails", "~> 3.7.2"
 end
 
