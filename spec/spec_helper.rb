@@ -10,8 +10,22 @@ require "shoulda/matchers"
 
 require "database_cleaner"
 
-require "capybara/poltergeist"
-Capybara.javascript_driver = :poltergeist
+# http://tech.speee.jp/entry/2017/06/15/135636
+require "capybara/rspec"
+require "selenium-webdriver"
+
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app,
+    browser: :chrome,
+    desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
+      chrome_options: {
+        args: %w(headless disable-gpu window-size=1680,1050),
+      },
+    )
+  )
+end
+
+Capybara.javascript_driver = :selenium
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
