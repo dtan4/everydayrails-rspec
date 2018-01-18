@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
 gem 'pg', '~> 0.21.0'
+gem 'puma'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem "twitter-bootstrap-rails", "~> 3.2.2"
