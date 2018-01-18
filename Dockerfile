@@ -32,6 +32,6 @@ COPY . /app
 
 RUN bundle exec rake assets:precompile
 
-EXPOSE 3000
+EXPOSE 9292
 
-CMD ["bin/rails", "s", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "rackup", "-o", "0.0.0.0", "-p", "9292"]
