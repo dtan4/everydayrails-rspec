@@ -2,19 +2,14 @@ version: '3'
 services:
   web:
     build: .
-    command:
-      - "bin/rails"
-      - "s"
-      - "-b"
-      - "0.0.0.0"
     environment:
       DATABASE_URL: "postgres://postgres:password@db:5432/everydayrails?sslmode=disable"
       RAILS_ENV: production
       ZIPKIN_ENABLED: 1
-      ZIPKIN_SERVICE_PORT: 3000
+      ZIPKIN_SERVICE_PORT: 9292
       ZIPKIN_URL: "http://zipkin:9411"
     ports:
-      - 3000:3000
+      - 9292:9292
   db:
     image: postgres:9.6-alpine
     environment:
