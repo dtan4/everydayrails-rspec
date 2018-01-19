@@ -46,7 +46,7 @@ ContactsExample40::Application.configure do
   config.log_level = :info
 
   # Prepend all log lines with the following tags.
-  # config.log_tags = [ :subdomain, :uuid ]
+  config.log_tags = [ :remote_ip, lambda { |req| req.headers[:HTTP_X_B3_TRACEID] } ]
 
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
