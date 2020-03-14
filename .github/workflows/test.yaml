@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Cache Go Modules dependencies
+      - name: Cache gem dependencies
         uses: actions/cache@v1
         with:
           path: vendor/bundle
