@@ -13,6 +13,10 @@ jobs:
     services:
       postgres:
         image: postgres:11
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: everydayrails
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
@@ -42,11 +46,11 @@ jobs:
           bundle install -j4
       - name: Setup database
         env:
-          DATABASE_URL: "postgres://postgres:@127.0.0.1/everydayrails?sslmode=disable"
+          DATABASE_URL: "postgres://postgres:postgres@127.0.0.1/everydayrails?sslmode=disable"
         run: |
           bundle exec rails db:create
           bundle exec rails db:schema:load
       - name: Run tests
         env:
-          DATABASE_URL: "postgres://postgres:@127.0.0.1/everydayrails?sslmode=disable"
+          DATABASE_URL: "postgres://postgres:postgres@127.0.0.1/everydayrails?sslmode=disable"
         run: bundle exec rake spec
