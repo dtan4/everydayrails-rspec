@@ -52,8 +52,8 @@ jobs:
         env:
           DATABASE_URL: "postgres://postgres:postgres@127.0.0.1/everydayrails?sslmode=disable"
         run: |
-          bundle exec rails db:create
-          bundle exec rails db:schema:load
+          bundle exec rake db:create
+          bundle exec rake db:schema:load
       - name: Run tests
         env:
           DATABASE_URL: "postgres://postgres:postgres@127.0.0.1/everydayrails?sslmode=disable"
