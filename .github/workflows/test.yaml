@@ -41,7 +41,6 @@ jobs:
       - name: Bundle install
         run: |
           sudo apt-get -yq install libpq-dev
-          gem update --system
 
           # workaround for the current BUNDLED WITH in Gemfile.lock
           gem install bundler:1.16.1
