@@ -14,18 +14,21 @@ require "database_cleaner"
 require "capybara/rspec"
 require "selenium-webdriver"
 
-Capybara.register_driver :selenium do |app|
+Capybara.register_driver :chrome do |app|
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('disable-notifications')
+  options.add_argument('disable-translate')
+  options.add_argument('disable-extensions')
+  options.add_argument('disable-infobars')
+  options.add_argument('window-size=1280,960')
+
   Capybara::Selenium::Driver.new(app,
     browser: :chrome,
-    desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
-      chrome_options: {
-        args: %w(headless disable-gpu window-size=1680,1050),
-      },
-    )
+    options: options,
   )
 end
 
-Capybara.javascript_driver = :selenium
+Capybara.javascript_driver = :chrome
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
