@@ -12,7 +12,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:11
+        image: postgres:9.6-alpine
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -49,7 +49,7 @@ jobs:
           bundle install -j4
       - name: Setup database
         env:
-          DATABASE_URL: "postgres://postgres:postgres@127.0.0.1/everydayrails?sslmode=disable"
+          DATABASE_URL: "postgres://postgres:postgres@127.0.0.1/everydayrails_test?sslmode=disable"
         run: |
           bundle exec rake db:create
           bundle exec rake db:schema:load
