@@ -47,9 +47,6 @@ jobs:
 
           bundle config path vendor/bundle
           bundle install -j4
-
-          which google-chrome || true
-          ls -la /usr/bin/google-chrome || true
       - name: Setup database
         env:
           RAILS_ENV: test
