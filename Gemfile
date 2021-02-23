@@ -34,6 +34,7 @@ end
 
 group :development do
   gem "capybara"
+  gem "selenium-webdriver"
   gem "webdriver"
   gem "database_cleaner"
   gem "faker"
