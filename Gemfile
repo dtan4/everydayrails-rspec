@@ -34,13 +34,12 @@ end
 
 group :development do
   gem "capybara"
-  gem "chromedriver-helper"
+  gem "webdriver"
   gem "database_cleaner"
   gem "faker"
   gem "guard-rspec"
   gem "launchy"
   gem "pry-rails"
-  gem "selenium-webdriver"
   gem "spring"
   gem "spring-commands-rspec"
   gem "terminal-notifier-guard"
