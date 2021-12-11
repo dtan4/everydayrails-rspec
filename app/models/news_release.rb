@@ -1,4 +1,4 @@
-class NewsRelease < ActiveRecord::Base
+class NewsRelease < ApplicationRecord
   validates :released_on, presence: true
   validates :title, presence: true
   validates :body, presence: true
