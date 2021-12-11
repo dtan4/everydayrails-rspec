@@ -4,13 +4,13 @@ gem 'rails', '4.2.10'
 
 gem 'bcrypt'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 gem 'jquery-rails'
 gem 'pg', '~> 0.21.0'
 gem 'puma'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
-gem "twitter-bootstrap-rails", "~> 3.2.2"
+gem "twitter-bootstrap-rails"
 gem 'uglifier', '>= 1.3.0'
 gem 'zipkin-tracer'
 
@@ -29,7 +29,7 @@ end
 group :development, :test do
   gem "chromedriver-helper"
   gem "factory_bot_rails"
-  gem "rspec-rails", "~> 3.7.2"
+  gem "rspec-rails"
   gem "simplecov"
   gem "simplecov-lcov", "~> 0.8.0"
 end

@@ -3,11 +3,11 @@ require "faker"
 FactoryBot.define do
   factory :user do
     email { Faker::Internet.email }
-    password "secret"
-    password_confirmation "secret"
+    password { "secret" }
+    password_confirmation { "secret" }
 
     factory :admin do
-      admin true
+      admin { true }
     end
   end
 end
