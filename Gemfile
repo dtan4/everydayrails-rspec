@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '5.2.6'
 
 gem 'bcrypt'
+gem 'bootsnap'
 gem 'coffee-rails'
 gem 'jbuilder'
 gem 'jquery-rails'

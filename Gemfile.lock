@@ -49,6 +49,8 @@ GEM
     arel (9.0.0)
     ast (2.4.2)
     bcrypt (3.1.16)
+    bootsnap (1.9.3)
+      msgpack (~> 1.0)
     builder (3.2.4)
     capybara (3.36.0)
       addressable
@@ -161,6 +163,7 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.6.1)
     minitest (5.14.4)
+    msgpack (1.4.2)
     multipart-post (2.1.1)
     nenv (0.3.0)
     nio4r (2.5.8)
@@ -334,6 +337,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  bootsnap
   capybara
   chromedriver-helper
   coffee-rails
