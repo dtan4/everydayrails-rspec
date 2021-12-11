@@ -5,6 +5,10 @@ Naming/AccessorMethodName:
   Exclude:
     - 'spec/support/login_macros.rb'
 
+Layout/LineLength:
+  Exclude:
+    - 'config/initializers/secret_token.rb'
+
 # TODO: Add unique index later
 Rails/UniqueValidationWithoutIndex:
   Exclude:
