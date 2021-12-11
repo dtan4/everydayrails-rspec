@@ -320,7 +320,7 @@ DEPENDENCIES
   sass-rails
   sdoc
   selenium-webdriver (~> 3.142.7)
-  shoulda-matchers (~> 4.5.1)
+  shoulda-matchers
   simplecov
   simplecov-lcov (~> 0.8.0)
   spring
