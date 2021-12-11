@@ -62,13 +62,13 @@ describe Contact, type: :model do
              email: 'jjohnson@example.com')
     end
 
-    context 'matching letters' do
+    context 'when letters are matching' do
       it 'returns a sorted array of results that match' do
         expect(described_class.by_letter('J')).to eq [johnson, jones]
       end
     end
 
-    context 'non-mathing letters' do
+    context 'when letters are not matching' do
       it 'returns a sorted array of results that match' do
         expect(described_class.by_letter('J')).not_to include smith
       end

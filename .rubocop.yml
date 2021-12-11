@@ -27,6 +27,10 @@ Rails/UniqueValidationWithoutIndex:
 RSpec/Capybara/FeatureMethods:
   Enabled: false
 
+RSpec/ContextWording:
+  Exclude:
+    - 'spec/features/news_releases_spec.rb'
+
 RSpec/ExampleLength:
   Enabled: false
 
