@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.10'
+gem 'rails', '5.0.7.2'
 
 gem 'bcrypt'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'pg', '~> 0.21.0'
 gem 'puma'
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 gem 'turbolinks'
 gem "twitter-bootstrap-rails"
 gem 'uglifier', '>= 1.3.0'
@@ -23,7 +23,7 @@ group :production do
 end
 
 group :test do
-  gem "shoulda-matchers", require: false
+  gem "shoulda-matchers", "~> 4.5.1", require: false
 end
 
 group :development, :test do
@@ -35,13 +35,13 @@ group :development, :test do
 end
 
 group :development do
-  gem "capybara"
+  gem "capybara", "~> 3.35.3"
   gem "database_cleaner"
   gem "faker"
   gem "guard-rspec"
   gem "launchy"
   gem "pry-rails"
-  gem "selenium-webdriver"
+  gem "selenium-webdriver", "~> 3.142.7"
   # gem "spring"
   # gem "spring-commands-rspec"
   gem "terminal-notifier-guard"
