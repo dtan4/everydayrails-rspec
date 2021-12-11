@@ -43,6 +43,7 @@ group :development do
   gem 'launchy'
   gem 'pry-rails'
   gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
   gem 'selenium-webdriver'
   gem 'spring'
   gem 'spring-commands-rspec'
