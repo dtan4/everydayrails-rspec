@@ -27,6 +27,7 @@ group :test do
 end
 
 group :development, :test do
+  gem "chromedriver-helper"
   gem "coveralls"
   gem "factory_bot_rails"
   gem "rspec-rails", "~> 3.7.2"
@@ -34,7 +35,6 @@ end
 
 group :development do
   gem "capybara"
-  gem "chromedriver-helper"
   gem "database_cleaner"
   gem "faker"
   gem "guard-rspec"
