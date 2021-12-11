@@ -36,13 +36,13 @@ group :development, :test do
 end
 
 group :development do
-  gem "capybara", "~> 3.35.3"
+  gem "capybara"
   gem "database_cleaner"
   gem "faker"
   gem "guard-rspec"
   gem "launchy"
   gem "pry-rails"
-  gem "selenium-webdriver", "~> 3.142.7"
+  gem "selenium-webdriver"
   gem "spring"
   gem "spring-commands-rspec"
   gem "terminal-notifier-guard"
