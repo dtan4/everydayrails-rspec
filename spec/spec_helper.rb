@@ -1,5 +1,19 @@
-require "coveralls"
-Coveralls.wear!("rails")
+require "simplecov"
+
+SimpleCov.start 'rails' do
+  if ENV['CI']
+    require 'simplecov-lcov'
+
+    SimpleCov::Formatter::LcovFormatter.config do |c|
+      c.report_with_single_file = true
+      c.single_report_path = 'coverage/lcov.info'
+    end
+
+    formatter SimpleCov::Formatter::LcovFormatter
+  end
+
+  add_filter %w[version.rb initializer.rb]
+end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
@@ -80,6 +94,10 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include LoginMacros
+
+  # Skip feature specs on CI,
+  # because Chromedriver (or Chrome itself) doesn't work in GitHub Actions
+  config.filter_run_excluding js: true if ENV["CI"] == "true"
 end
 
 Shoulda::Matchers.configure do |config|
