@@ -1,4 +1,4 @@
-require "faker"
+require 'faker'
 
 FactoryBot.define do
   factory :contact do
@@ -7,9 +7,9 @@ FactoryBot.define do
     email { Faker::Internet.email }
 
     after(:build) do |contact|
-      [:home_phone, :work_phone, :mobile_phone].each do |phone|
+      %i[home_phone work_phone mobile_phone].each do |phone|
         contact.phones << FactoryBot.build(:phone,
-                                            phone_type: phone, contact: contact)
+                                           phone_type: phone, contact: contact)
       end
     end
 

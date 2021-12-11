@@ -7,4 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.find_or_create_by_email(email: 'admin@example.com',
-  password: 'secret', password_confirmation: 'secret', admin: true)
+                             password: 'secret', password_confirmation: 'secret', admin: true)

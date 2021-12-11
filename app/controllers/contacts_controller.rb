@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
-  before_action :authenticate, except: [:index, :show]
-  before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, except: %i[index show]
+  before_action :set_contact, only: %i[show edit update destroy]
 
   # GET /contacts
   # GET /contacts.json
@@ -11,8 +11,8 @@ class ContactsController < ApplicationController
       format.html
       format.csv do
         send_data Contact.to_csv(@contacts),
-          type: "text/csv;charset=UTF-8; header=present",
-          disposition: "attachment; filename=contacts.csv"
+                  type: 'text/csv;charset=UTF-8; header=present',
+                  disposition: 'attachment; filename=contacts.csv'
       end
     end
   end
@@ -25,7 +25,7 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
-    %w(home office mobile).each do |phone|
+    %w[home office mobile].each do |phone|
       @contact.phones.build(phone_type: phone)
     end
   end
@@ -75,14 +75,15 @@ class ContactsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_contact
-      @contact = Contact.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def contact_params
-      params.require(:contact).permit(:firstname, :lastname, :email,
-        :phones_attributes => [:id, :phone, :phone_type])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_contact
+    @contact = Contact.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def contact_params
+    params.require(:contact).permit(:firstname, :lastname, :email,
+                                    phones_attributes: %i[id phone phone_type])
+  end
 end

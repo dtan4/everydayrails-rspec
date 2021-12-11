@@ -1,0 +1,55 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
+Metrics/BlockLength:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Exclude:
+    - 'spec/support/login_macros.rb'
+
+Layout/LineLength:
+  Exclude:
+    - 'config/initializers/secret_token.rb'
+
+# TODO: Add unique index later
+Rails/UniqueValidationWithoutIndex:
+  Exclude:
+    - 'app/models/contact.rb'
+    - 'app/models/phone.rb'
+    - 'app/models/user.rb'
+
+# This breaks feature specs around DSL
+RSpec/Capybara/FeatureMethods:
+  Enabled: false
+
+RSpec/ContextWording:
+  Exclude:
+    - 'spec/features/news_releases_spec.rb'
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+Style/ClassVars:
+  Exclude:
+    - 'spec/support/shared_db_connection.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  Exclude:
+    - 'app/controllers/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
