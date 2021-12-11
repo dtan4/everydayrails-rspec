@@ -6,7 +6,7 @@ gem 'bcrypt'
 gem 'coffee-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
-gem 'pg', '~> 0.21.0'
+gem 'pg'
 gem 'puma'
 gem 'sass-rails'
 gem 'turbolinks'
@@ -24,7 +24,7 @@ end
 
 group :test do
   gem "rails-controller-testing"
-  gem "shoulda-matchers", "~> 4.5.1", require: false
+  gem "shoulda-matchers", require: false
 end
 
 group :development, :test do
@@ -36,14 +36,14 @@ group :development, :test do
 end
 
 group :development do
-  gem "capybara", "~> 3.35.3"
+  gem "capybara"
   gem "database_cleaner"
   gem "faker"
   gem "guard-rspec"
   gem "launchy"
   gem "pry-rails"
-  gem "selenium-webdriver", "~> 3.142.7"
-  # gem "spring"
-  # gem "spring-commands-rspec"
+  gem "selenium-webdriver"
+  gem "spring"
+  gem "spring-commands-rspec"
   gem "terminal-notifier-guard"
 end
