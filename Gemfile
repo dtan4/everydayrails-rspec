@@ -46,6 +46,7 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'selenium-webdriver'
+  gem 'solargraph'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'terminal-notifier-guard'
