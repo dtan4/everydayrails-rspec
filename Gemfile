@@ -23,6 +23,7 @@ group :production do
 end
 
 group :test do
+  gem "rails-controller-testing"
   gem "shoulda-matchers", "~> 4.5.1", require: false
 end
 
