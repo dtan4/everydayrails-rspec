@@ -33,11 +33,6 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Bundle install
-        run: |
-          sudo apt-get -yq install libpq-dev
-          bundle install
-
       - name: Setup database
         env:
           RAILS_ENV: test
