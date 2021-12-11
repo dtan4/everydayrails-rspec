@@ -6,7 +6,6 @@ describe ContactsController, type: :controller do
       context 'with params[:letter]' do
         it 'populates an array of contacts starting with the letter' do
           smith = create(:contact, lastname: 'Smith')
-          jones = create(:contact, lastname: 'Jones')
           get :index, params: { letter: 'S' }
           expect(assigns(:contacts)).to match_array([smith])
         end
@@ -212,7 +211,6 @@ describe ContactsController, type: :controller do
       context 'with params[:letter]' do
         it 'populates an array of contacts starting with the letter' do
           smith = create(:contact, lastname: 'Smith')
-          jones = create(:contact, lastname: 'Jones')
           get :index, params: { letter: 'S' }
           expect(assigns(:contacts)).to match_array([smith])
         end
