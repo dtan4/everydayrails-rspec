@@ -1,6 +1,6 @@
 class NewsReleasesController < ApplicationController
-  before_action :authenticate, except: [:index, :show]
-  before_action :set_news_release, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, except: %i[index show]
+  before_action :set_news_release, only: %i[show edit update destroy]
 
   # GET /news_releases
   # GET /news_releases.json
@@ -63,13 +63,14 @@ class NewsReleasesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_news_release
-      @news_release = NewsRelease.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def news_release_params
-      params.require(:news_release).permit(:title, :released_on, :body)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_news_release
+    @news_release = NewsRelease.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def news_release_params
+    params.require(:news_release).permit(:title, :released_on, :body)
+  end
 end

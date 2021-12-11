@@ -13,9 +13,9 @@ class Contact < ActiveRecord::Base
 
   def self.by_letter(letter)
     if letter
-      where("lastname LIKE ?", "#{letter}%").order(:lastname)
+      where('lastname LIKE ?', "#{letter}%").order(:lastname)
     else
-      all.order("lastname, firstname")
+      all.order('lastname, firstname')
     end
   end
 
