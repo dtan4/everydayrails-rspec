@@ -1,6 +1,6 @@
 # This is my learning copy. Original repository is here: [everydayrails/rspec_rails_4](https://github.com/everydayrails/rspec_rails_4)
 
-[![Build Status](https://travis-ci.org/dtan4/everydayrails-rspec.svg?branch=master)](https://travis-ci.org/dtan4/everydayrails-rspec)
+[![Test](https://github.com/dtan4/everydayrails-rspec/actions/workflows/test.yaml/badge.svg)](https://github.com/dtan4/everydayrails-rspec/actions/workflows/test.yaml)
 [![Coverage Status](https://coveralls.io/repos/dtan4/everydayrails-rspec/badge.png?branch=master)](https://coveralls.io/r/dtan4/everydayrails-rspec?branch=master)
 
 Sample Rails 4.0.x application for [Everyday Rails Testing with RSpec: A Practical Approach to Test-driven Development](https://leanpub.com/everydayrailsrspec) by Aaron Sumner. This repository demonstrates incremental testing of an existing application, starting with an untested codebase and working through model, controller, and feature specs.
