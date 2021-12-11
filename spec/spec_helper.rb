@@ -80,6 +80,10 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include LoginMacros
+
+  # Skip feature specs on CI,
+  # because Chromedriver (or Chrome itself) doesn't work in GitHub Actions
+  config.filter_run_excluding js: true if ENV["CI"] == "true"
 end
 
 Shoulda::Matchers.configure do |config|
