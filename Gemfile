@@ -28,9 +28,10 @@ end
 
 group :development, :test do
   gem "chromedriver-helper"
-  gem "coveralls"
   gem "factory_bot_rails"
   gem "rspec-rails", "~> 3.7.2"
+  gem "simplecov"
+  gem "simplecov-lcov", "~> 0.8.0"
 end
 
 group :development do
