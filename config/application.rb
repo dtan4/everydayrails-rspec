@@ -9,6 +9,8 @@ Bundler.require(*Rails.groups)
 
 module ContactsExample40
   class Application < Rails::Application
+    config.load_defaults 5.1
+
     config.generators do |g|
       g.test_framework :rspec,
                        fixtures: true,
