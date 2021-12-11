@@ -23,6 +23,19 @@ Rails/UniqueValidationWithoutIndex:
     - 'app/models/phone.rb'
     - 'app/models/user.rb'
 
+# This breaks feature specs around DSL
+RSpec/Capybara/FeatureMethods:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
 Style/ClassVars:
   Exclude:
     - 'spec/support/shared_db_connection.rb'
