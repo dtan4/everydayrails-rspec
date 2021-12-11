@@ -42,7 +42,7 @@ group :development do
   gem "launchy"
   gem "pry-rails"
   gem "selenium-webdriver"
-  gem "spring"
-  gem "spring-commands-rspec"
+  # gem "spring"
+  # gem "spring-commands-rspec"
   gem "terminal-notifier-guard"
 end
