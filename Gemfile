@@ -10,7 +10,7 @@ gem 'pg', '~> 0.21.0'
 gem 'puma'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
-gem "twitter-bootstrap-rails", "~> 3.2.2"
+gem "twitter-bootstrap-rails"
 gem 'uglifier', '>= 1.3.0'
 gem 'zipkin-tracer'
 
