@@ -4,7 +4,7 @@ gem 'rails', '4.2.10'
 
 gem 'bcrypt'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 gem 'jquery-rails'
 gem 'pg', '~> 0.21.0'
 gem 'puma'
