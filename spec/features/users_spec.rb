@@ -16,7 +16,7 @@ feature 'User managament' do
       click_button 'Create User'
     end.to change(User, :count).by(1)
 
-    expect(current_path).to eq users_path
+    expect(page).to have_current_path users_path, ignore_query: true
     expect(page).to have_content 'New user created'
 
     within 'h1' do

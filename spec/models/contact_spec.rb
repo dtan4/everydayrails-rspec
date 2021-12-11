@@ -64,13 +64,13 @@ describe Contact, type: :model do
 
     context 'matching letters' do
       it 'returns a sorted array of results that match' do
-        expect(Contact.by_letter('J')).to eq [johnson, jones]
+        expect(described_class.by_letter('J')).to eq [johnson, jones]
       end
     end
 
     context 'non-mathing letters' do
       it 'returns a sorted array of results that match' do
-        expect(Contact.by_letter('J')).not_to include smith
+        expect(described_class.by_letter('J')).not_to include smith
       end
     end
   end
@@ -81,7 +81,7 @@ describe Contact, type: :model do
              firstname: 'Aaron',
              lastname: 'Sumnar',
              email: 'aaron@sample.com')
-      expect(Contact.to_csv).to match(/Aaron Sumnar,aaron@sample.com/)
+      expect(described_class.to_csv).to match(/Aaron Sumnar,aaron@sample.com/)
     end
   end
 end

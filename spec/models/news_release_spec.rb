@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe NewsRelease, type: :model do
   it 'returns the formatted date and title as a string' do
-    news_release = NewsRelease.new(
+    news_release = described_class.new(
       released_on: '2013-07-31',
       title: 'BigCo hires new CEO'
     )

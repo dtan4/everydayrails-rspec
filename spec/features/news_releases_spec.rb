@@ -8,7 +8,7 @@ feature 'News releases' do
       visit root_path
       click_link 'News'
 
-      expect(page).to_not have_content 'BigCo switches to Rails'
+      expect(page).not_to have_content 'BigCo switches to Rails'
 
       click_link 'Add News Release'
 
@@ -17,7 +17,7 @@ feature 'News releases' do
       fill_in 'Body', with: 'BigCo has released a new website build with open source.'
       click_button 'Create News release'
 
-      expect(current_path).to eq news_releases_path
+      expect(page).to have_current_path news_releases_path, ignore_query: true
       expect(page).to have_content 'Successfully created news release.'
       expect(page).to have_content '2013-07-29: BigCo switches to Rails'
     end
@@ -33,8 +33,8 @@ feature 'News releases' do
       visit root_path
       click_link 'News'
 
-      expect(page).to_not have_content "Today, BigCo's CFO announced record growth.'"
-      expect(page).to_not have_content 'Add News Release'
+      expect(page).not_to have_content "Today, BigCo's CFO announced record growth.'"
+      expect(page).not_to have_content 'Add News Release'
 
       click_link '2013-08-01: Record profits for BigCo!'
 
