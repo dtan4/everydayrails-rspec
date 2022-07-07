@@ -3,7 +3,7 @@ FROM ruby:2.7.5-alpine
 ENV TIMEZONE Asia/Tokyo
 
 RUN apk add --no-cache -U tzdata \
-    && ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime
+      && ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime
 
 RUN bundle config --global build.nokogiri \
       --use-system-libraries \
@@ -25,8 +25,8 @@ COPY Gemfile.lock /app/
 RUN apk add --no-cache -U --virtual build-deps \
       g++ \
       make \
-    && bundle install -j4 --deployment --without development test \
-    && apk del build-deps
+      && bundle install --deployment --without development test \
+      && apk del build-deps
 
 COPY . /app
 
