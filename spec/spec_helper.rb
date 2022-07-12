@@ -77,10 +77,6 @@ RSpec.configure do |config|
 
   config.include LoginMacros
 
-  # Skip feature specs on CI,
-  # because Chromedriver (or Chrome itself) doesn't work in GitHub Actions
-  config.filter_run_excluding js: true if ENV['CI'] == 'true'
-
   config.before(:each, type: :system) do
     driven_by :selenium_chrome_headless
   end
