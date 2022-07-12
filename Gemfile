@@ -29,11 +29,11 @@ group :test do
 end
 
 group :development, :test do
-  gem 'chromedriver-helper'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'simplecov-lcov', '~> 0.8.0'
+  gem 'webdrivers', require: false
 end
 
 group :development do

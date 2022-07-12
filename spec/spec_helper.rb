@@ -27,9 +27,7 @@ require 'database_cleaner'
 # http://tech.speee.jp/entry/2017/06/15/135636
 require 'capybara/rspec'
 require 'selenium-webdriver'
-
-# to use with Chrome 96
-Chromedriver.set_version '96.0.4664.45'
+require 'webdrivers/chromedriver'
 
 Capybara.register_driver :selenium do |app|
   options = Selenium::WebDriver::Chrome::Options.new
