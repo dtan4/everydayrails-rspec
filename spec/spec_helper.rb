@@ -24,23 +24,7 @@ require 'shoulda/matchers'
 
 require 'database_cleaner'
 
-# http://tech.speee.jp/entry/2017/06/15/135636
-require 'capybara/rspec'
-require 'selenium-webdriver'
 require 'webdrivers/chromedriver'
-
-Capybara.register_driver :selenium do |app|
-  options = Selenium::WebDriver::Chrome::Options.new
-  options.add_argument('--headless')
-  options.add_argument('--disable-gpu')
-  options.add_argument('--window-size=1680,1050')
-
-  Capybara::Selenium::Driver.new(app,
-                                 browser: :chrome,
-                                 options: options)
-end
-
-Capybara.javascript_driver = :selenium
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -96,6 +80,10 @@ RSpec.configure do |config|
   # Skip feature specs on CI,
   # because Chromedriver (or Chrome itself) doesn't work in GitHub Actions
   config.filter_run_excluding js: true if ENV['CI'] == 'true'
+
+  config.before(:each, type: :system) do
+    driven_by :selenium_chrome_headless
+  end
 end
 
 Shoulda::Matchers.configure do |config|
