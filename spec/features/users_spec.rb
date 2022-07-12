@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-feature 'User managament' do
-  scenario 'adds a new user', js: true do
+describe 'User managament', type: :system do
+  it 'adds a new user', js: true do
     admin = create(:admin)
     sign_in admin
 

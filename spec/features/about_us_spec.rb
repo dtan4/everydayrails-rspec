@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-feature 'About BigCo modal' do
-  scenario 'toggles display of the modal about display', js: true do
+describe 'About BigCo modal', type: :system do
+  it 'toggles display of the modal about display', js: true do
     visit root_path
 
     expect(page).not_to have_content 'About BigCo'
