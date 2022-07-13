@@ -38,7 +38,6 @@ end
 
 group :development do
   gem 'capybara'
-  gem 'database_cleaner'
   gem 'faker'
   gem 'guard-rspec'
   gem 'launchy'
