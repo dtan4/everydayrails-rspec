@@ -4,7 +4,6 @@ gem 'rails', '6.1.6.1'
 
 gem 'bcrypt'
 gem 'bootsnap'
-gem 'coffee-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'pg'
