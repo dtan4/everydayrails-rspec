@@ -33,7 +33,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'simplecov-lcov', '~> 0.8.0'
-  gem 'webdrivers', require: false
+  gem 'webdrivers', require: !ENV['SELENIUM_DRIVER_URL']
 end
 
 group :development do
