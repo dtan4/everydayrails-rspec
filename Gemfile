@@ -24,7 +24,9 @@ group :production do
 end
 
 group :test do
+  gem 'capybara'
   gem 'rails-controller-testing'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', require: false
 end
 
@@ -37,14 +39,12 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capybara'
   gem 'faker'
   gem 'guard-rspec'
   gem 'launchy'
   gem 'pry-rails'
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  gem 'selenium-webdriver'
   gem 'solargraph'
   gem 'spring'
   gem 'spring-commands-rspec'
