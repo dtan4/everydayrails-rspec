@@ -39,7 +39,6 @@ end
 
 group :development do
   gem 'faker'
-  gem 'guard-rspec'
   gem 'launchy'
   gem 'pry-rails'
   gem 'rubocop-rails', require: false
@@ -47,5 +46,4 @@ group :development do
   gem 'solargraph'
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'terminal-notifier-guard'
 end
