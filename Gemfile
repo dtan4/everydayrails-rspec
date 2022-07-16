@@ -31,6 +31,7 @@ end
 
 group :development, :test do
   gem 'factory_bot_rails'
+  gem 'listen'
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'simplecov-lcov', '~> 0.8.0'
