@@ -25,7 +25,6 @@ end
 group :test do
   gem 'capybara'
   gem 'rails-controller-testing'
-  gem 'selenium-webdriver'
   gem 'shoulda-matchers', require: false
 end
 
@@ -33,9 +32,9 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'listen'
   gem 'rspec-rails'
+  gem 'selenium-webdriver'
   gem 'simplecov'
   gem 'simplecov-lcov', '~> 0.8.0'
-  gem 'webdrivers', require: !ENV['SELENIUM_DRIVER_URL']
 end
 
 group :development do
