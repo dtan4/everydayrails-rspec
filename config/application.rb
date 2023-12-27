@@ -25,8 +25,8 @@ module ContactsExample40
     if ENV['ZIPKIN_ENABLED'].present?
       config.middleware.use ZipkinTracer::RackHandler,
                             service_name: 'everydayrails-rspec',
-                            service_port: (ENV['ZIPKIN_SERVICE_PORT'] || 3000).to_i,
-                            json_api_host: ENV['ZIPKIN_URL'] || 'http://localhost:9411',
+                            service_port: ENV.fetch('ZIPKIN_SERVICE_PORT', 3000).to_i,
+                            json_api_host: ENV.fetch('ZIPKIN_URL', 'http://localhost:9411'),
                             sample_rate: 1
     end
   end
