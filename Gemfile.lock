@@ -64,7 +64,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     backport (1.2.0)
-    bcrypt (3.1.16)
+    bcrypt (3.1.20)
     benchmark (0.2.0)
     bootsnap (1.9.3)
       msgpack (~> 1.0)
