@@ -21,6 +21,6 @@ services:
       - 5432:5432
 
   zipkin:
-    image: openzipkin/zipkin:2.4.2
+    image: openzipkin/zipkin:2.25.2
     ports:
       - 9411:9411
