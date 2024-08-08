@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '6.1.7.6'
+gem 'rails', '7.1.3.4'
 
 gem 'bcrypt'
 gem 'bootsnap'
