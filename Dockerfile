@@ -1,4 +1,4 @@
-FROM ruby:3.0.4-alpine
+FROM ruby:3.3.6-alpine
 
 ENV TIMEZONE Asia/Tokyo
 
