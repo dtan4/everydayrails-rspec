@@ -13,10 +13,10 @@
       ],
       "automerge": true,
       "automergeType": "branch",
-      "excludePackageNames": [
-        "ruby",
-        "rails",
-        "rspec-rails"
+      "matchPackageNames": [
+        "!ruby",
+        "!rails",
+        "!rspec-rails"
       ]
     }
   ]
