@@ -24,7 +24,7 @@ Rails/UniqueValidationWithoutIndex:
     - 'app/models/user.rb'
 
 # This breaks feature specs around DSL
-RSpec/Capybara/FeatureMethods:
+RSpec/Dialect:
   Enabled: false
 
 RSpec/ContextWording:
