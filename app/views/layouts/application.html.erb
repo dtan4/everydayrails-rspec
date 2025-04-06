@@ -46,6 +46,12 @@
 
   <div class="container">
 
+    <% if flash["notice"] %>
+      <div class="alert alert-primary" role="alert">
+        <%= flash["notice"] %>
+      </div>
+    <% end %>
+
     <div class="btn-group">
       <% ('A'..'Z').each do |letter| %>
         <%= link_to_unless_current letter, contacts_path(letter: letter), class: 'btn' %>
