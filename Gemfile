@@ -4,6 +4,7 @@ gem 'rails', '7.2.2.1'
 
 gem 'bcrypt'
 gem 'bootsnap'
+gem 'csv'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'net-smtp'
