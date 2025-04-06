@@ -45,6 +45,3 @@ jobs:
           RAILS_ENV: test
           DATABASE_URL: "postgres://postgres:postgres@127.0.0.1/everydayrails_test?sslmode=disable"
         run: bundle exec rake spec
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@v2
