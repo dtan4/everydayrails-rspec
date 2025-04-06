@@ -4,28 +4,46 @@
   <title>Contacts</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <%= nav_bar brand: "BigCo, Inc." do %>
-    <%= menu_group do %>
-        <%= menu_item "Home", root_path %>
-        <%= menu_item "About Us", '#about_us', data: { toggle: 'modal' } %>
-        <%= menu_item "News", news_releases_path %>
-        <%= menu_item "Contact", '#' %>
-    <% end %>
-    <%= menu_group :pull => :right do %>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Bigco, Inc.</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#aboutModal" href="#">About us</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to "News", news_releases_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Contact", "#", class: "nav-link" %>
+          </li>
       <% if current_user %>
         <% if administrator? %>
-          <%= menu_item 'Users', users_path %>
+        <li class="nav-item">
+          <%= link_to "Users", users_path, class: "nav-link" %>
+        </li>
         <% end %>
-        <%= menu_item 'Log Out', logout_path %>
+        <li class="nav-item">
+          <%= link_to "Log Out", logout_path, class: "nav-link" %>
+        </li>
       <% else %>
-        <%= menu_item 'Log In', new_session_path %>
+        <li class="nav-item">
+          <%= link_to "Log In", new_session_path, class: "nav-link" %>
+        </li>
       <% end %>
-    <% end %>
-  <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <div class="container">
 
@@ -39,10 +57,23 @@
     <%= yield %>
   </div>
 
-  <%= modal_dialog :id => "about_us",
-    :header => { show_close: true, dismiss: 'modal', title: 'About BigCo' },
-    :body   => { content: 'BigCo produces the finest widgets in all the land.' },
-    :footer => { content: content_tag(:button, 'Close', class: 'btn btn-primary', data: { dismiss: 'modal'}, aria: { hidden: true }) } %>
+  <div class="modal" id="aboutModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">About BigCo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>BigCo produces the finest widgets in all the land.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>
