@@ -7,14 +7,12 @@ describe 'User managament', type: :system do
 
     visit root_path
 
-    expect do
-      click_link 'Users'
-      click_link 'New User'
-      fill_in 'Email', with: 'newuser@example.com'
-      find('#password').fill_in 'Password', with: 'secret123'
-      find('#password_confirmation').fill_in 'Password confirmation', with: 'secret123'
-      click_button 'Create User'
-    end.to change(User, :count).by(1)
+    click_link 'Users'
+    click_link 'New User'
+    fill_in 'Email', with: 'newuser@example.com'
+    find('#password').fill_in 'Password', with: 'secret123'
+    find('#password_confirmation').fill_in 'Password confirmation', with: 'secret123'
+    click_button 'Create User'
 
     expect(page).to have_current_path users_path, ignore_query: true
     expect(page).to have_content 'New user created'
@@ -24,5 +22,6 @@ describe 'User managament', type: :system do
     end
 
     expect(page).to have_content 'newuser@example.com'
+    expect(User.find_by(email: 'newuser@example.com')).to be_present
   end
 end
